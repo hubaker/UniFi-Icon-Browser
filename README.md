@@ -1,38 +1,36 @@
 # UniFi Device Icon Browser
 
-A powerful, client-side tool for browsing and searching UniFi device icons with automatic device name extraction from the UniFi portal.
+A simple, client-side tool for browsing and searching UniFi device icons with automatic device name/ID extraction from the UniFi portal.
 
 ![UniFi Icon Browser](https://img.shields.io/badge/UniFi-Icon%20Browser-132889?style=for-the-badge&logo=ubiquiti)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)
 ![No Dependencies](https://img.shields.io/badge/dependencies-none-success?style=for-the-badge)
 
-## 🌟 Features
+## Features
 
-- **🔍 Smart Search** - Search device icons by name or ID across your imported device registry
-- **📋 Easy Import** - Extract device names directly from UniFi portal using a bookmarklet
-- **💾 Persistent Storage** - Device names are saved locally and persist across sessions
+- **🔍 Smart Search** - Easily search every device icon available in Unifi uisng partial matches
+- **📋 Easy Import** - Extracts device ID list directly from UniFi portal using a clever bookmarklet
+- **💾 Persistent Storage** - Device ID's are saved locally and persist across sessions
 - **🎨 Modern UI** - Beautiful dark mode interface with smooth animations
-- **⚡ Fast & Lightweight** - Pure HTML/CSS/JavaScript, no dependencies, no server required
-- **📱 Responsive** - Works on desktop and mobile devices
-- **🔄 Real-time Updates** - See device count updates as you import
+- **⚡ Fast & Secure** - Pure HTML/CSS/JavaScript, no dependencies, lives 100% in your browser!
 
-## 🎯 What It Does
+## What It Does
 
-This tool solves a common problem for UniFi network administrators: **finding the right device icon quickly**. Instead of scrolling through hundreds of generic icons in the UniFi portal, you can:
+This tool solves a major fustration I have with UniFi: **finding the right device icon quickly** (or, at least a close match...🙄). 
+Instead of scrolling through **THOUSANDS** of icons, or trying to search the **EXACT** name of the device in the UniFi portal, you can:
 
-1. Extract device names from your UniFi portal
-2. Search and browse devices by name
-3. Copy device names, IDs, or image URLs with one click
-4. Build a personal device registry that grows over time
+1. Extract the entire device list from your UniFi portal
+2. Search and browse devices by partial matches
+3. Easily copy device names or image URLs with one click
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Option 1: Direct Use (Recommended)
 
 1. **Download** `unifi-icon-browser.html` to your computer
 2. **Open** it in any modern web browser (Chrome, Firefox, Edge, Safari)
 3. **Follow** the on-page instructions to set up the bookmarklet
-4. **Start browsing** your device icons!
+4. **Start browsing** device icons!
 
 ### Option 2: GitHub Pages
 
@@ -44,18 +42,20 @@ This tool solves a common problem for UniFi network administrators: **finding th
 
 ### Step 1: Set Up the Bookmarklet
 
-1. Drag the **"Extract Devices from UniFi Portal"** link to your bookmarks bar
-2. Keep this page open in your browser
+1. Open the unifi-icon-browser.html file in your browser
+2. Drag the **"Extract Devices from UniFi Portal"** link to your bookmarks bar
 
 ### Step 2: Extract Device Names
 
 1. Open a **new tab** and navigate to your UniFi portal
-2. Log in to your UniFi dashboard
+2. Log in to your UniFi dashboard (both local and *.ui.com methods work)
 3. Click on any client device
 4. Click on the device's icon to open the icon selection modal
 5. **While the icon selection modal is open**, click the bookmarklet you created in Step 1
 6. You'll see a success message with the number of device IDs extracted
 7. The JSON data is automatically copied to your clipboard
+<img width="713" height="688" alt="image" src="https://github.com/user-attachments/assets/00420bb3-6c20-44f3-bb9d-0945912e438f" />
+
 
 ### Step 3: Import Device Names
 
@@ -69,7 +69,7 @@ This tool solves a common problem for UniFi network administrators: **finding th
 - Click any icon to copy its device name to clipboard
 - Use the action buttons to copy device ID or image URL
 
-## 🔧 How It Works
+## How It Works
 
 ### Architecture
 
@@ -104,29 +104,29 @@ The bookmarklet uses advanced techniques to extract device names from the UniFi 
 - Limits results to 100 items for performance
 - Real-time filtering as you type
 
-## 💡 Why I Made This
+## Why I Made This
 
-As a UniFi network administrator, I found myself constantly scrolling through hundreds of device icons trying to find the right one. The UniFi portal's icon selection interface is functional, but searching by device name would be much more efficient.
+As a UniFi admin, I grew fustrated with scrolling through thousands of devices in a box the size of a postage stamp, looking for the right icon.
+(...or if it didn't exist, at least one that was a close match). 
 
-This tool was created to:
+The UniFi portal does have a search box, but it deson't allow perial name matches.               
+(...searching "iPhone" shows 0 results, but "**Apple iphone**" does, for example.)
 
-- **Save time** - Find device icons instantly by name instead of scrolling
-- **Build a knowledge base** - Create a personal registry of device names
-- **Stay organized** - Keep track of device icons you've used
-- **Work offline** - No internet required after initial setup (except for icon images)
-
-## 🎨 Screenshots
+## Screenshots
 
 ### Main Interface
 - Clean, modern dark mode interface
 - Collapsible instructions section
 - Sticky search bar for easy access
 - Real-time device count display
+ <img width="713" height="688" alt="image" src="https://github.com/user-attachments/assets/0be9b219-21c7-4032-8674-f5eb8a88599b" />
 
 ### Search Results
 - Grid layout with device icons
 - Click to copy device names
 - Quick access to device IDs and URLs
+<img width="713" height="688" alt="image" src="https://github.com/user-attachments/assets/807141da-adbe-463d-bb12-8e9dd6fec32e" />
+
 
 ## 🔒 Privacy & Security
 
@@ -144,17 +144,8 @@ This tool was created to:
 
 **Note:** The bookmarklet requires a modern browser with JavaScript enabled.
 
-## 📝 File Structure
 
-```
-unifi-icon-browser/
-├── unifi-icon-browser.html  # Single-file application
-└── README.md                # This file
-```
-
-That's it! Everything is in one HTML file for maximum portability.
-
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Here are some ways you can help:
 
@@ -167,27 +158,6 @@ Contributions are welcome! Here are some ways you can help:
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🙏 Acknowledgments
-
-- **Ubiquiti** - For creating the UniFi ecosystem
-- **The Community** - For feedback and suggestions
-
-## 📞 Support
-
-- **Issues** - Report bugs or request features on GitHub Issues
-- **Discussions** - Ask questions in GitHub Discussions
-
-## 🗺️ Roadmap
-
-Future improvements may include:
-
-- [ ] Export device registry to JSON file
-- [ ] Import device registry from JSON file
-- [ ] Bulk icon operations
-- [ ] Device icon favorites
-- [ ] Custom device name editing
-- [ ] Dark/light theme toggle
-- [ ] Keyboard shortcuts
 
 ## ⚠️ Disclaimer
 
